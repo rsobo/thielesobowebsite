@@ -23,122 +23,166 @@
             opacity: 0; /* Start hidden */
         }
         /* Stagger the animation for each card */
-        .card-1 { animation-delay: 0.1s; }
-        .card-2 { animation-delay: 0.2s; }
-        .card-3 { animation-delay: 0.3s; }
-        .card-4 { animation-delay: 0.4s; }
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+        .delay-6 { animation-delay: 0.6s; }
 
-        .logo {
+        .logo-container {
             width: 48px;
             height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo-img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
         }
     </style>
 </head>
-<body class="text-white">
+<body class="text-white min-h-screen flex flex-col">
 
-    <div class="flex flex-col items-center justify-center min-h-screen p-4">
+    <div class="flex-grow flex flex-col items-center justify-start pt-12 pb-12 px-4">
         
-        <!-- Main Container -->
-        <div class="w-full max-w-md mx-auto">
+        <!-- Main Container (Back to narrow max-w-md) -->
+        <div class="w-full max-w-md mx-auto space-y-10">
 
             <!-- Header -->
-            <header class="text-center mb-12">
-                <h1 class="text-4xl md:text-5xl font-bold text-slate-100">thielesobo.com</h1>
-                <p class="text-slate-400 mt-2">Your personal cloud directory.</p>
-                <p class="text-slate-400 mt-2">WARNING: These links are for authorized users only, please log into each service after following the link.</p>
+            <header class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-slate-100 tracking-tight">thielesobo.com</h1>
+                <p class="text-slate-400 mt-3 text-lg">Your personal cloud directory.</p>
+                <div class="mt-4 p-3 bg-amber-500/10 border border-amber-500/20 rounded-lg">
+                    <p class="text-amber-500 text-xs md:text-sm font-medium">
+                        ⚠️ Authorized access only. Please log in to continue.
+                    </p>
+                </div>
             </header>
 
-            <!-- Link Buttons -->
+            <!-- MAIN APPS SECTION -->
             <main class="space-y-4">
+                <div class="flex items-center space-x-2 mb-4 px-1">
+                    <h3 class="text-slate-500 text-sm font-semibold uppercase tracking-wider">Applications</h3>
+                    <div class="h-px bg-slate-800 flex-grow"></div>
+                </div>
 
                 <!-- Plex Link -->
-                <a href="https://plex.tv/login" target="_blank" rel="noopener noreferrer" class="fade-in card-1 group flex items-center bg-slate-800 hover:bg-slate-700 p-4 rounded-lg shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="logo bg-slate-900 p-2 rounded-md flex items-center justify-center">
+                <a href="https://plex.tv/login" target="_blank" rel="noopener noreferrer" class="fade-in delay-1 group flex items-center bg-slate-800 hover:bg-slate-750 border border-slate-700/50 hover:border-slate-600 p-4 rounded-xl shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl">
+                    <div class="logo-container bg-slate-900 rounded-lg p-2">
                         <svg class="h-8 w-8 text-[#E5A00D]" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M11.643 1.001a.999.999 0 0 0-.933.514L4.19 11.484a1 1 0 0 0 .933 1.484h6.162l-3.48 8.517a1 1 0 0 0 .932 1.483h.001a1 1 0 0 0 .933-.515l6.52-9.968a1 1 0 0 0-.932-1.483h-6.16l3.48-8.516a1 1 0 0 0-.933-1.485Z"/>
                         </svg>
                     </div>
                     <div class="ml-4 flex-grow">
-                        <h2 class="text-xl font-semibold text-slate-100">Plex</h2>
-                        <p class="text-slate-400">Media Server</p>
+                        <h2 class="text-lg font-semibold text-slate-100 group-hover:text-white">Plex</h2>
+                        <p class="text-slate-400 text-sm">Media Server</p>
                     </div>
                     <div class="text-right">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-500 group-hover:text-slate-300 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-600 group-hover:text-slate-300 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                         </svg>
                     </div>
                 </a>
 
                 <!-- Immich Link -->
-                <a href="https://immich.thielesobo.com" target="_blank" rel="noopener noreferrer" class="fade-in card-1 group flex items-center bg-slate-800 hover:bg-slate-700 p-4 rounded-lg shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                     <div class="logo bg-slate-900 p-2 rounded-md flex items-center justify-center">
-                        <img src="https://immich.app/img/immich-logo.svg" alt="Immich Logo" class="h-8 w-8">
+                <a href="https://immich.thielesobo.com" target="_blank" rel="noopener noreferrer" class="fade-in delay-2 group flex items-center bg-slate-800 hover:bg-slate-750 border border-slate-700/50 hover:border-slate-600 p-4 rounded-xl shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl">
+                     <div class="logo-container bg-slate-900 rounded-lg p-2">
+                        <img src="https://avatars.githubusercontent.com/u/109746326?s=200&v=4" alt="Immich Logo" class="logo-img">
                     </div>
                     <div class="ml-4 flex-grow">
-                        <h2 class="text-xl font-semibold text-slate-100">Immich</h2>
-                        <p class="text-slate-400">Photo & Video Backup</p>
+                        <h2 class="text-lg font-semibold text-slate-100 group-hover:text-white">Immich</h2>
+                        <p class="text-slate-400 text-sm">Photos & Backup</p>
                     </div>
                      <div class="text-right">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-500 group-hover:text-slate-300 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-600 group-hover:text-slate-300 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                         </svg>
                     </div>
                 </a>
 
-                <!-- StirlingPDF Link -->
-                <a href="https://pdf.thielesobo.com" target="_blank" rel="noopener noreferrer" class="fade-in card-2 group flex items-center bg-slate-800 hover:bg-slate-700 p-4 rounded-lg shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                     <div class="logo bg-slate-900 p-2 rounded-md flex items-center justify-center">
-                        <img src="https://raw.githubusercontent.com/Stirling-Tools/Stirling-PDF/main/docs/stirling.png" alt="StirlingPDF">
+                <!-- File Browser Link -->
+                <a href="https://browser.thielesobo.com" target="_blank" rel="noopener noreferrer" class="fade-in delay-3 group flex items-center bg-slate-800 hover:bg-slate-750 border border-slate-700/50 hover:border-slate-600 p-4 rounded-xl shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl">
+                     <div class="logo-container bg-slate-900 rounded-lg p-2">
+                        <img src="https://filebrowser.org/static/logo.png" alt="FileBrowser" class="logo-img">
                     </div>
                     <div class="ml-4 flex-grow">
-                        <h2 class="text-xl font-semibold text-slate-100">StirlingPDF</h2>
-                        <p class="text-slate-400">Document Service</p>
+                        <h2 class="text-lg font-semibold text-slate-100 group-hover:text-white">File Browser</h2>
+                        <p class="text-slate-400 text-sm">File Manager</p>
                     </div>
                      <div class="text-right">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-500 group-hover:text-slate-300 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-600 group-hover:text-slate-300 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                         </svg>
                     </div>
                 </a>
 
-                 <!-- File Browser Link -->
-                <a href="https://browser.thielesobo.com" target="_blank" rel="noopener noreferrer" class="fade-in card-2 group flex items-center bg-slate-800 hover:bg-slate-700 p-4 rounded-lg shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                     <div class="logo bg-slate-900 p-2 rounded-md flex items-center justify-center">
-                        <img src="https://filebrowser.org/static/logo.png" alt="FileBrowser">
-                    </div>
-                    <div class="ml-4 flex-grow">
-                        <h2 class="text-xl font-semibold text-slate-100">File Browser</h2>
-                        <p class="text-slate-400">File Browser</p>
-                    </div>
-                     <div class="text-right">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-500 group-hover:text-slate-300 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </div>
-                </a>
+                <!-- Mealie Link -->
+                <a href="https://mealie.thielesobo.com" target="_blank" rel="noopener noreferrer" class="fade-in delay-4 group flex items-center bg-slate-800 hover:bg-slate-750 border border-slate-700/50 hover:border-slate-600 p-4 rounded-xl shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl">
+                    <div class="logo-container bg-slate-900 rounded-lg p-2">
+                       <img src="https://avatars.githubusercontent.com/u/92342333?v=4" alt="Mealie" class="logo-img rounded-md">
+                   </div>
+                   <div class="ml-4 flex-grow">
+                       <h2 class="text-lg font-semibold text-slate-100 group-hover:text-white">Mealie</h2>
+                       <p class="text-slate-400 text-sm">Recipe Manager</p>
+                   </div>
+                    <div class="text-right">
+                       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-600 group-hover:text-slate-300 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                       </svg>
+                   </div>
+               </a>
 
-                <!-- Coming Soon Button -->
-                <div class="fade-in card-3 flex items-center bg-slate-800 p-4 rounded-lg shadow-lg cursor-not-allowed opacity-60">
-                     <div class="logo bg-slate-900 p-2 rounded-md flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                    <div class="ml-4 flex-grow">
-                        <h2 class="text-xl font-semibold text-slate-400">More...</h2>
-                        <p class="text-slate-500">Coming Soon</p>
-                    </div>
-                </div>
-
+                <!-- LinkWarden Link -->
+                <a href="https://linkwarden.thielesobo.com" target="_blank" rel="noopener noreferrer" class="fade-in delay-5 group flex items-center bg-slate-800 hover:bg-slate-750 border border-slate-700/50 hover:border-slate-600 p-4 rounded-xl shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl">
+                    <div class="logo-container bg-slate-900 rounded-lg p-2">
+                       <img src="https://avatars.githubusercontent.com/u/135248736?v=4" alt="LinkWarden" class="logo-img">
+                   </div>
+                   <div class="ml-4 flex-grow">
+                       <h2 class="text-lg font-semibold text-slate-100 group-hover:text-white">LinkWarden</h2>
+                       <p class="text-slate-400 text-sm">Bookmarks & Archive</p>
+                   </div>
+                    <div class="text-right">
+                       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-600 group-hover:text-slate-300 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                       </svg>
+                   </div>
+               </a>
             </main>
 
-            <!-- Footer -->
-            <footer class="text-center text-slate-500 mt-16">
-                <p>&copy; 2025 thielesobo.com</p>
-            </footer>
-        </div>
+            <!-- TOOLS SECTION -->
+            <section class="space-y-4">
+                <div class="flex items-center space-x-2 mb-4 px-1 mt-8">
+                    <h3 class="text-slate-500 text-sm font-semibold uppercase tracking-wider">Tools</h3>
+                    <div class="h-px bg-slate-800 flex-grow"></div>
+                </div>
 
+                <!-- StirlingPDF Link -->
+                <a href="https://pdf.thielesobo.com" target="_blank" rel="noopener noreferrer" class="fade-in delay-6 group flex items-center bg-slate-800/80 hover:bg-slate-800 border border-slate-700/30 hover:border-slate-600 p-3 rounded-xl shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                     <div class="logo-container bg-slate-900 rounded-lg p-2 h-10 w-10">
+                        <img src="https://raw.githubusercontent.com/Stirling-Tools/Stirling-PDF/main/docs/stirling.png" alt="StirlingPDF" class="logo-img">
+                    </div>
+                    <div class="ml-4 flex-grow">
+                        <h2 class="text-base font-semibold text-slate-200 group-hover:text-white">StirlingPDF</h2>
+                        <p class="text-slate-500 text-xs">PDF Operations</p>
+                    </div>
+                     <div class="text-right">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-slate-600 group-hover:text-slate-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </a>
+            </section>
+
+        </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-slate-600 py-6 text-sm">
+        <p>&copy; 2025 thielesobo.com</p>
+    </footer>
 
 </body>
 </html>
